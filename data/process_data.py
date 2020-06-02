@@ -31,15 +31,25 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+    """
+    Clean Data function
+
+    input:
+        df: raw data Pandas DataFrame
+    outputs:
+        df: clean data Pandas DataFrame
+    """
     categories = df.categories.str.split(';', expand = True)
     row = categories.loc[0]
     category_colnames = row.apply(lambda x: x[:-2]).values.tolist()
     categories.columns = category_colnames
 
-    # loop through columns in the catagories
+    #loop through columns in the catagories
     for column in categories:
+        # set each value to be the last character of the string
         categories[column] = categories[column].astype(str).str[-1]
-        categories[column] = pd.to_numeric(categories[column])
+        # convert column from string to numeric
+        categories[column] = categories[column].astype(int)
 
     df.drop('categories', axis = 1, inplace = True)
     df = pd.concat([df, categories], axis = 1)
@@ -51,9 +61,9 @@ def save_data(df, database_filename):
     """
     Save Data function
 
-    Arguments:
-        df -> Clean data Pandas DataFrame
-        database_filename -> database file (.db) destination path
+    input:
+        df: Clean data Pandas DataFrame
+        database_filename: database file (.db) destination path
     """
     engine = create_engine('sqlite:///'+ database_filename)
     df.to_sql('df', engine, index=False)
