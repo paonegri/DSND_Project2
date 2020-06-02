@@ -1,19 +1,73 @@
+"""
+PREPROCESSING DATA
+Disaster Response Pipeline Project
+Udacity - Data Science Nanodegree
+Sample Script Execution:
+> python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
+Arguments:
+    1) CSV file containing messages (disaster_messages.csv)
+    2) CSV file containing categories (disaster_categories.csv)
+    3) SQLite destination database (DisasterResponse.db)
+"""
+
 import sys
+import pandas as pd
+import numpy as np
+from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
-    pass
-
+    '''
+    input:
+        messages_filepath: The path of messages dataset.
+        categories_filepath: The path of categories dataset.
+    output:
+        df: The merged dataset
+    '''
+    #load data from csv
+    messages = pd.read_csv(messages_filepath) #load messages data from csv
+    categories = pd.read_csv(categories_filepath) #load categories data from csv
+    df = pd.merge(messages, categories, on='id')
+    return df
 
 def clean_data(df):
-    pass
+    categories = df.categories.str.split(';', expand = True)
+    row = categories.loc[0]
+    category_colnames = row.apply(lambda x: x[:-2]).values.tolist()
+    categories.columns = category_colnames
 
+    # loop through columns in the catagories
+    for column in categories:
+        categories[column] = categories[column].astype(str).str[-1]
+        categories[column] = pd.to_numeric(categories[column])
+
+    df.drop('categories', axis = 1, inplace = True)
+    df = pd.concat([df, categories], axis = 1)
+    df = df.drop_duplicates()
+
+    return df
 
 def save_data(df, database_filename):
-    pass  
+    """
+    Save Data function
+
+    Arguments:
+        df -> Clean data Pandas DataFrame
+        database_filename -> database file (.db) destination path
+    """
+    engine = create_engine('sqlite:///'+ database_filename)
+    df.to_sql('df', engine, index=False)
 
 
 def main():
+    """
+    Main Data Processing function
+
+    This function implement the ETL pipeline:
+        1) Data extraction from .csv
+        2) Data cleaning and pre-processing
+        3) Data loading to SQLite database
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
@@ -24,12 +78,12 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
-        
+
         print('Cleaned data saved to database!')
-    
+
     else:
         print('Please provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
