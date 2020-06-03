@@ -1,10 +1,7 @@
 """
 TRAIN CLASSIFIER
-Disaster Resoponse Project
-Udacity - Data Science Nanodegree
-How to run this script (Example)
 > python train_classifier.py ../data/disaster_dataset.db classifier.pkl
-Arguments:
+input:
     1) SQLite db path (containing pre-processed data)
     2) pickle file name to save ML model
 """
@@ -121,8 +118,8 @@ def evaluate_model(model, X_test, Y_test, category_names):
 def save_model(model, model_filepath):
     '''
     Function to save the model
-    Input: model and the file path to save the model
-    Output: save the model as pickle file in the give filepath
+    input: model and the file path to save the model
+    output: save the model as pickle file in the give filepath
     '''
     pickle.dump(model, open(model_filepath, 'wb'))
 
