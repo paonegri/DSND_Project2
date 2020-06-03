@@ -109,7 +109,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
         category_names: label names (multi-output)
     """
     y_pred = model.predict(X_test)
-    overall_accuracy = (y_pred == y_test).mean().mean()
+    overall_accuracy = (y_pred == Y_test).mean().mean()
 
     print(classification_report(y_pred, Y_test.values, target_names=category_names))
     print('overall accuracy {0:.4f} \n'.format(overall_accuracy))
