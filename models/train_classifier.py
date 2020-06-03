@@ -14,6 +14,15 @@ import sys
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
@@ -26,7 +35,6 @@ from sklearn.metrics import classification_report, f1_score, make_scorer
 from sklearn.decomposition import TruncatedSVD
 import pickle
 
-nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger'])
 
 def load_data(database_filepath):
     """
