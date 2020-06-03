@@ -109,7 +109,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
         category_names: label names (multi-output)
     """
     y_pred = model.predict(X_test)
-        for i, col in enumerate(y_test):
+    for i, col in enumerate(y_test):
         print('***')
         print(col)
         print(classification_report(y_test[col], y_pred[:, i]))
