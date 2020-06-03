@@ -109,12 +109,12 @@ def evaluate_model(model, X_test, Y_test, category_names):
         category_names: label names (multi-output)
     """
     y_pred = model.predict(X_test)
-    for i, col in enumerate(y_test):
-        print('***')
-        print(col)
-        print(classification_report(y_test[col], y_pred[:, i]))
-    overall_accuracy = (y_pred == Y_test).mean().mean()
+    print("----Classification Report per Category:\n")
+    for i in range(len(category_names)):
+        print("Label:", category_names[i])
+        print(classification_report(Y_test[:, i], Y_pred[:, i]))
 
+    overall_accuracy = (y_pred == Y_test).mean().mean()
     print('overall accuracy {0:.4f} \n'.format(overall_accuracy))
 
 
