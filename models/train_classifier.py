@@ -48,8 +48,8 @@ def load_data(database_filepath):
         category_names: used for data visualization (app)
     """
     # load data from database
-    engine = create_engine("sqlite:///content/"+database_filepath)
-    df = pd.read_sql_table("disaster_dataset", engine)
+    engine = create_engine('sqlite:///'+database_filepath)
+    df = pd.read_sql_table('df',engine)
     X = df['message']
     Y = df.iloc[:,4:]
     category_names = Y.columns
