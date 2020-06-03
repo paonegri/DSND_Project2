@@ -1,10 +1,7 @@
 """
 PREPROCESSING DATA
-Disaster Response Pipeline Project
-Udacity - Data Science Nanodegree
-Sample Script Execution:
 > python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
-Arguments:
+input:
     1) CSV file containing messages (disaster_messages.csv)
     2) CSV file containing categories (disaster_categories.csv)
     3) SQLite destination database (DisasterResponse.db)
@@ -66,7 +63,7 @@ def save_data(df, database_filename):
         database_filename: database file (.db) destination path
     """
     engine = create_engine('sqlite:///'+ database_filename)
-    df.to_sql('df', engine, index=False)
+    df.to_sql('df', engine)
 
 
 def main():
