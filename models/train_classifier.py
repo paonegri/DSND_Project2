@@ -49,7 +49,7 @@ def load_data(database_filepath):
     df = pd.read_sql_table('df',engine)
     X = df['message']
     Y = df.iloc[:,4:]
-    category_names = Y.columns
+    category_names = Y.columns.tolist()
     return X, Y, category_names
 
 
