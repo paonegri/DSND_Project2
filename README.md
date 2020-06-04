@@ -73,8 +73,8 @@ You can use **ML Pipeline Preparation Notebook** to re-train the model or tune i
 <a name="acknowledgement"></a>
 ## Acknowledgements
 
-* [Udacity](https://www.udacity.com/) for providing such a complete Data Science Nanodegree Program
-* [Figure Eight](https://www.figure-eight.com/) for providing messages dataset to train my model
+* [Udacity](https://www.udacity.com/)
+* [Figure Eight](https://www.figure-eight.com/) for providing messages dataset to train the model
 
 <a name="screenshots"></a>
 ## Screenshots
