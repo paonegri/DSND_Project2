@@ -66,11 +66,6 @@ In the **data** and **models** folder you can find two jupyter notebooks used to
 
 You can use **ML Pipeline Preparation Notebook** to re-train the model or tune it through a dedicated Grid Search section.
 
-<a name="authors"></a>
-## Authors
-
-* [xxx](https://github.com/xxx)
-
 <a name="license"></a>
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
