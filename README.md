@@ -1,6 +1,6 @@
 Disaster Response Pipeline Project
 
-![Intro Pic](screenshots/intro.png)
+![Intro Pic](screenshots/s1.png)
 
 ## Table of Contents
 1. [Description](#description)
@@ -18,21 +18,21 @@ Disaster Response Pipeline Project
 ## Description
 
 This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight.
-The initial dataset contains pre-labelled tweet and messages from real-life disaster.
-The aim of the project is to build a Natural Language Processing tool that categorize messages.
+The initial datasets contain real messages that were sent during disaster events.
+The aim of the project is to build a web app where an emergency worker can input a new message and get classification results in several categories.
 
 The Project is divided in the following Sections:
 
-1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure
-2. Machine Learning Pipeline to train a model able to classify text message in categories
-3. Web App to show model results in real time.
+1. Data Processing, ETL Pipeline
+2. Machine Learning Pipeline
+3. Web App
 
 <a name="getting_started"></a>
 ## Getting Started
 
 <a name="dependencies"></a>
 ### Dependencies
-* Python 3.5+ (I used Python 3.7)
+* Python 3.5+
 * Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
 * Natural Language Process Libraries: NLTK
 * SQLlite Database Libraqries: SQLalchemy
@@ -61,13 +61,11 @@ git clone https://github.com/xxx.git
 <a name="material"></a>
 ### Additional Material
 
-In the **data** and **models** folder you can find two jupyter notebook that will help you understand how the model works step by step:
-1. **ETL Preparation Notebook**: learn everything about the implemented ETL pipeline
-2. **ML Pipeline Preparation Notebook**: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn
+In the **data** and **models** folder you can find two jupyter notebooks:
+1. **ETL Preparation Notebook**
+2. **ML Pipeline Preparation Notebook**
 
 You can use **ML Pipeline Preparation Notebook** to re-train the model or tune it through a dedicated Grid Search section.
-In this case, it is warmly recommended to use a Linux machine to run Grid Search, especially if you are going to try a large combination of parameters.
-Using a standard desktop/laptop (4 CPUs, RAM 8Gb or above) it may take several hours to complete.
 
 <a name="authors"></a>
 ## Authors
