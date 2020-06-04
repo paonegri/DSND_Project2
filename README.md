@@ -79,14 +79,7 @@ You can use **ML Pipeline Preparation Notebook** to re-train the model or tune i
 <a name="screenshots"></a>
 ## Screenshots
 
-1. This is an example of a message you can type to test Machine Learning model performance
+1. The main page shows some graphs about training dataset
 
-![Sample Input](screenshots/sample_input.png)
-
-2. After clicking **Classify Message**, you can see the categories which the message belongs to highlighted in green
-
-![Sample Output](screenshots/sample_output.png)
-
-3. The main page shows some graphs about training dataset, provided by Figure Eight
-
-![Main Page](screenshots/main_page.png)
+![Sample Input](screenshots/s2.png)
+![Main Page](screenshots/s3.png)
