@@ -112,7 +112,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     for i, col in enumerate(category_names):
         print (col)
         print(classification_report(Y_test[col], y_pred[:,i]))
-        
+
     overall_accuracy = (y_pred == Y_test).mean().mean()
     print('overall accuracy {0:.4f} \n'.format(overall_accuracy))
 
