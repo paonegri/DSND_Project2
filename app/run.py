@@ -87,7 +87,7 @@ def index():
                 },
                 'xaxis': {
                     'title': "Category",
-                    'tickangle': 35
+                    'tickangle': 30
                 }
             }
         }
