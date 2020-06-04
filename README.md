@@ -5,14 +5,13 @@ Disaster Response Pipeline Project
 ## Table of Contents
 1. [Description](#description)
 2. [Getting Started](#getting_started)
- 1. [Dependencies](#dependencies)
- 2. [Installing](#installing)
- 3. [Executing Program](#executing)
- 4. [Additional Material](#material)
-3. [Authors](#authors)
-4. [License](#license)
-5. [Acknowledgement](#acknowledgement)
-6. [Screenshots](#screenshots)
+        1. [Dependencies](#dependencies)
+        2. [Installing](#installing)
+        3. [Executing Program](#executing)
+        4. [Additional Material](#material)
+3. [License](#license)
+4. [Acknowledgement](#acknowledgement)
+5. [Screenshots](#screenshots)
 
 <a name="descripton"></a>
 ## Description
@@ -42,7 +41,7 @@ The Project is divided in the following Sections:
 ### Installing
 Clone this GIT repository:
 ```
-git clone https://github.com/xxx.git
+git clone https://github.com/paonegri/udacity_ds2.git
 ```
 <a name="executing"></a>
 ### Executing Program:
@@ -61,7 +60,7 @@ git clone https://github.com/xxx.git
 <a name="material"></a>
 ### Additional Material
 
-In the **data** and **models** folder you can find two jupyter notebooks:
+In the **data** and **models** folder you can find two jupyter notebooks used to prepare the pipelines:
 1. **ETL Preparation Notebook**
 2. **ML Pipeline Preparation Notebook**
 
