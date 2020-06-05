@@ -1,11 +1,11 @@
-"""
+'''
 PREPROCESSING DATA
 > python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
 input:
-    1) CSV file containing messages (disaster_messages.csv)
-    2) CSV file containing categories (disaster_categories.csv)
+    1) CSV file (disaster_messages.csv)
+    2) CSV file (disaster_categories.csv)
     3) SQLite destination database (DisasterResponse.db)
-"""
+'''
 
 import sys
 import pandas as pd
@@ -28,14 +28,12 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
-    """
-    Clean Data function
-
+    '''
     input:
         df: raw data Pandas DataFrame
     outputs:
         df: clean data Pandas DataFrame
-    """
+    '''
     categories = df.categories.str.split(';', expand = True)
     row = categories.loc[0]
     category_colnames = row.apply(lambda x: x[:-2]).values.tolist()
@@ -55,26 +53,22 @@ def clean_data(df):
     return df
 
 def save_data(df, database_filename):
-    """
-    Save Data function
-
+    '''
     input:
         df: Clean data Pandas DataFrame
         database_filename: database file (.db) destination path
-    """
+    '''
     engine = create_engine('sqlite:///'+ database_filename)
     df.to_sql('df', engine)
 
 
 def main():
-    """
-    Main Data Processing function
-
+    '''
     This function implement the ETL pipeline:
         1) Data extraction from .csv
         2) Data cleaning and pre-processing
         3) Data loading to SQLite database
-    """
+    '''
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
