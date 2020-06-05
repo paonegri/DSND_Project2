@@ -77,7 +77,7 @@ In the **data** and **models** folder you can find two jupyter notebooks used to
 <a name="screenshots"></a>
 ## Screenshots
 
-1. The main page shows some graphs about training dataset
+1. Dashboard homepage
 
 ![Main Page](screenshots/s2.png)
 ![Main Page](screenshots/s3.png)
