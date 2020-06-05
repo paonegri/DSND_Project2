@@ -1,10 +1,10 @@
-"""
+'''
 TRAIN CLASSIFIER
 > python train_classifier.py ../data/disaster_dataset.db classifier.pkl
 input:
     1) SQLite db path (containing pre-processed data)
     2) pickle file name to save ML model
-"""
+'''
 
 # import libraries
 import sys
@@ -34,16 +34,14 @@ import pickle
 
 
 def load_data(database_filepath):
-    """
-    Load Data Function
-
+    '''
     input:
         database_filepath: path to SQLite db
     output:
         X: feature DataFrame
         Y: label DataFrame
         category_names: used for data visualization (app)
-    """
+    '''
     # load data from database
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql_table('df',engine)
@@ -54,14 +52,12 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
-    """
-    Tokenize function
-
+    '''
     input:
         text: list of text messages (english)
     output:
         clean_tokens: tokenized text, clean for ML modeling
-    """
+    '''
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
     clean_tokens = []
@@ -73,8 +69,6 @@ def tokenize(text):
 
 def build_model():
     '''
-    Function to build a model, create pipeline, hypertuning as well as gridsearchcv
-
     input:
         N/A
     output:
@@ -97,18 +91,15 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-    """
-    Evaluate Model function
-
-    This function applies ML pipeline to a test set and prints out
-    model performance (accuracy and f1score)
-
+    '''
     input:
         model: Scikit ML Pipeline
         X_test: test features
         Y_test: test labels
         category_names: label names (multi-output)
-    """
+    output:
+        print accuracy, f1 score
+    '''
     y_pred = model.predict(X_test)
     for i, col in enumerate(category_names):
         print (col)
@@ -120,9 +111,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 def save_model(model, model_filepath):
     '''
-    Function to save the model
-    input: model and the file path to save the model
-    output: save the model as pickle file in the give filepath
+    input:
+        model and the file path to save the model
+    output:
+        save the model as pickle file in the give filepath
     '''
     pickle.dump(model, open(model_filepath, 'wb'))
 
