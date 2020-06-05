@@ -1,4 +1,4 @@
-Disaster Response Pipeline Project
+Disaster Response Pipeline
 
 ![Intro Pic](screenshots/s1.png)
 
@@ -64,8 +64,6 @@ In the **data** and **models** folder you can find two jupyter notebooks used to
 1. **ETL Preparation Notebook**
 2. **ML Pipeline Preparation Notebook**
 
-You can use **ML Pipeline Preparation Notebook** to re-train the model or tune it through a dedicated Grid Search section.
-
 <a name="license"></a>
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -74,12 +72,12 @@ You can use **ML Pipeline Preparation Notebook** to re-train the model or tune i
 ## Acknowledgements
 
 * [Udacity](https://www.udacity.com/)
-* [Figure Eight](https://www.figure-eight.com/) for providing messages dataset to train the model
+* [Figure Eight](https://www.figure-eight.com/)
 
 <a name="screenshots"></a>
 ## Screenshots
 
 1. The main page shows some graphs about training dataset
 
-![Sample Input](screenshots/s2.png)
+![Main Page](screenshots/s2.png)
 ![Main Page](screenshots/s3.png)
