@@ -5,13 +5,14 @@ Disaster Response Pipeline
 ## Table of Contents
 1. [Description](#description)
 2. [Getting Started](#getting_started)
-        1. [Dependencies](#dependencies)
+	1. [Dependencies](#dependencies)
 	2. [Installing](#installing)
 	3. [Executing Program](#executing)
 	4. [Additional Material](#material)
-3. [License](#license)
-4. [Acknowledgement](#acknowledgement)
-5. [Screenshots](#screenshots)
+3. [Authors](#authors)
+4. [License](#license)
+5. [Acknowledgement](#acknowledgement)
+6. [Screenshots](#screenshots)
 
 <a name="descripton"></a>
 ## Description
