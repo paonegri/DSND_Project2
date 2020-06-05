@@ -9,10 +9,9 @@ Disaster Response Pipeline
 	2. [Installing](#installing)
 	3. [Executing Program](#executing)
 	4. [Additional Material](#material)
-3. [Authors](#authors)
-4. [License](#license)
-5. [Acknowledgement](#acknowledgement)
-6. [Screenshots](#screenshots)
+3. [License](#license)
+4. [Acknowledgement](#acknowledgement)
+5. [Screenshots](#screenshots)
 
 <a name="descripton"></a>
 ## Description
