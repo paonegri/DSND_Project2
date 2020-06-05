@@ -77,7 +77,7 @@ In the **data** and **models** folder you can find two jupyter notebooks used to
 <a name="screenshots"></a>
 ## Screenshots
 
-1. Dashboard homepage
+1. Dashboard Main Page
 
 ![Main Page](screenshots/s2.png)
 ![Main Page](screenshots/s3.png)
